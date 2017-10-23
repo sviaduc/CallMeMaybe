@@ -1,0 +1,37 @@
+package data;
+
+import entities.People;
+
+public class PeopleDAOImpl implements PeopleDAO {
+
+	@Override
+	public List<People> index() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public People show(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public People create(String quizJSON) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public People update(int id, String quizJSON) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean destroy(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}
