@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Mon Oct 23 11:31:46 MDT 2017
-org.eclipse.jst.j2ee.server\:JPACallMeMaybe=WEB-INF/lib/JPACallMeMaybe.jar
-org.eclipse.jst.j2ee.server\:/binary\:/Users/stan/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/4.3.2.RELEASE/562b3b775b6e8e7113b5d23b21946f939658bd19/spring-web-4.3.2.RELEASE.jar=WEB-INF/lib/spring-web-4.3.2.RELEASE.jar

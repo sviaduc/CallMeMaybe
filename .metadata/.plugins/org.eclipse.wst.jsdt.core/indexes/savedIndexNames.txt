@@ -1,8 +1,0 @@
-INDEX VERSION 1.4+/Users/stan/SD/Projects/EventTracker/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-1600276086.index
-3480263916.index
-249112490.index
-511245727.index
-3944755722.index
-1270208743.index
-3552185282.index
