@@ -75,30 +75,47 @@ $(document).ready(function() {
 			//console.log(this.id.callDate);
 			var date = new Date();
 			var newObject = {
-					callDate: date,
+					callDate: date
 			}
 			
-			
 			$.ajax({
-                type: "PUT",
-                url: "rest/people/" + this.id + "/update",
+                type: "GET",
+                url: "rest/people/" + this.id,
                 dataType: "json",
-                contentType : 'application/json',
-                data : JSON.stringify(newObject)
+               
               })
-              .done(function(data, status) {
-                $('#content').empty();
-                getAllPeople();
-                
-                
-                //hit button = add 10 points
-				//each diffDays = - 1 point
-                
-              })
+			 .done(function(data, status) {
+				 console.log(data);
+				 var preCall = new Date(data.callDate);
+				
+				 var timeDiff = Math.abs(date.getTime() - preCall.getTime());
+				 var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+				 alert("Days since last called: " + diffDays);
+				
+				 $.ajax({
+		                type: "PUT",
+		                url: "rest/people/" + data.id + "/update",
+		                dataType: "json",
+		                contentType : 'application/json',
+		                data : JSON.stringify(newObject)
+		              })
+		              .done(function(data, status) {
+		                $('#content').empty();
+		                getAllPeople();
+		                
+		                
+		                //hit button = add 10 points
+						//each diffDays = - 1 point
+		                
+		              })
 
-              .fail(function(xhr, status, error) {
-                console.log('ERROR! Something went wrong!');
-              });
+		              .fail(function(xhr, status, error) {
+		                console.log('ERROR! Something went wrong!');
+		              });
+            
+			 })
+			
+			
 		})
 
           deleteButton.click(function(e) {
