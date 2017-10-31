@@ -1,0 +1,64 @@
+<h1>Call Me Maybe</h1>
+<table ng-hide="vm.selected">
+	<thead>
+		<tr>
+			<td>Index</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="people in vm.people" >
+			<td ng-click="vm.selectPerson(people)">{{people.id}}</td>
+			<td ng-click="vm.selectPerson(people)">{{people.name}}</td>
+			<td><button ng-click="vm.updateDate(people)">Called</button></td>
+			<td><button ng-click="vm.deletePerson(people.id)">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
+
+<div ng-hide="vm.selected">
+ <form name= "createPeople"class="" action="index.html" method="post">
+      <input type="text" name="name"  placeholder="name" ng-model="people.name">
+      <input type="text" name="callDate"  placeholder="callDate" ng-model="people.callDate">
+      <input type="text" name="relationship" placeholder="relationship" ng-model="people.relationship">
+      <input type="text" name="birthday"  placeholder="birthday" ng-model="people.birthday">
+      <!-- <input type="text" name="img"  placeholder="img"> -->
+      
+      <input id= "create" type="submit" name="" value="Create New" ng-click="vm.addPerson(people); people = {}">
+ </form>
+</div>
+
+<!-- <div ng-show="vm.selected">
+	<ul>
+		<li>{{vm.selected.name}}</li>
+		<li>{{vm.selected.callDate}}</li>
+		<li>{{vm.selected.relationship}}</li>
+		<li>{{vm.selected.birthday}}</li>
+		<button ng-click="vm.selectPerson(people)">Return</button>
+	</ul>
+</div> -->
+
+<div ng-show="vm.selected && !vm.editPerson">
+<div>ID: "{{vm.selected.name}}"</div>
+<div>Name: {{vm.selected.callDate}}</div>
+<div>Description: {{vm.selected.relationship}}</div>
+<div>Completed: {{vm.selected.birthday}}</div>
+<button ng-click="vm.setEditPerson()">Edit</button>
+<button ng-click="vm.selectPerson(people)">Return</button>
+</div>
+
+<div ng-show="vm.editPerson && vm.selected">
+ 	<form name= "createPeople">
+	      <input type="text" name="name"  placeholder="name" ng-model="vm.editPerson.name">
+	      <input type="text" name="callDate"  placeholder="callDate" ng-model="vm.editPerson.callDate">
+	      <input type="text" name="relationship" placeholder="relationship" ng-model="vm.editPerson.relationship">
+	      <input type="text" name="birthday"  placeholder="birthday" ng-model="vm.editPerson.birthday">
+	      <!-- <input type="text" name="img"  placeholder="img"> -->
+	       <input type="submit" value="Cancel" ng-click="vm.editPerson = null" />
+	      <input id= "edit" type="submit" value="Edit" ng-click="vm.updatePerson(vm.editPerson)">
+    </form>
+</div>
+
+
+
+   
+  

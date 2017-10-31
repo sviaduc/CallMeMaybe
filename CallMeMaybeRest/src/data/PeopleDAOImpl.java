@@ -60,7 +60,9 @@ public class PeopleDAOImpl implements PeopleDAO {
 		  }
 		  People p = em.find(People.class, id);
 		  p.setName(mappedPeople.getName());
-		  
+		  p.setCallDate(mappedPeople.getCallDate());
+		  p.setRelationship(mappedPeople.getRelationship());
+		  p.setBirthday(mappedPeople.getBirthday());
 			
 		 return p;
 	}

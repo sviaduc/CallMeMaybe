@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>CallMeMaybe</title>
-
+<html ng-app="appModule">
+<head>
+<meta charset="UTF-8">
+<title>ngCallMeMaybe</title>
+  <!--  
+  Angular 3rd party
+  Modules
+  Services 
+  Components -->
+  
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js">
+  </script>
+  <script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.min.js">
+  </script>
+   <script src="app/appModule/app.module.js"></script>
+   <script src="app/appModule/callMeMaybe.service.js"></script>
+   <script src="app/appModule/people/people.component.js"></script>
     <link rel="stylesheet" href="app.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <h1>Call Me Maybe</h1>
-    <div id='content'></div>
-    <form name= "createPeople"class="" action="index.html" method="post">
-      <input type="text" name="name"  placeholder="name">
-      <input type="text" name="callDate"  placeholder="callDate">
-      <input type="text" name="relationship" placeholder="relationship">
-      <!-- <input type="text" name="img"  placeholder="img"> -->
-      <input type="text" name="birthday"  placeholder="birthday">
-      
-      <input id= "create" type="submit" name="" value="Create New">
-    </form>
-	<div id="updateButton">
-	</div>
-    <script src="JS/app.js"></script>
-
-  </body>
-
+</head>
+<body>
+<ng-view>Loading...</ng-view>
+<!-- <people>Loading...</people> -->
+</body>
 </html>

@@ -51,6 +51,7 @@ public class PeopleController {
 	
 	@RequestMapping(path="people/{id}", method = RequestMethod.PUT)
 	public People update(@PathVariable int id,@RequestBody String peopleJSON, HttpServletResponse res) {
+		System.out.println("**************");
 		return peopleDao.update(id, peopleJSON);
 	}
 	
